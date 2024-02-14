@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import IntemNavegacao from './ItemNavegacao'
+import ItemNavegacao from './ItemNavegacao'
 
 import homeAtivo from '/icones/home-ativo.png'
 import homeInativo from '/icones/home-inativo.png'
@@ -18,20 +18,20 @@ const BarraLateral = () => {
     <aside>
       <nav>
         <ListaEstilizada>
-          <IntemNavegacao 
+          <ItemNavegacao 
             iconeAtivo={homeAtivo}
             iconeInativo={homeInativo}
             ativo={true}
           >
             Início
-          </IntemNavegacao>
-          <IntemNavegacao 
+          </ItemNavegacao>
+          <ItemNavegacao 
             iconeAtivo={vistasAtivo}
             iconeInativo={vistasInativo}
             ativo={false}
           >
             Mais Visitados
-          </IntemNavegacao>
+          </ItemNavegacao>
         </ListaEstilizada>
       </nav>
     </aside>
