@@ -1,8 +1,7 @@
-import { styled } from 'styled-components'
-import EstilosGlobais from './componentes/EstilosGlobais'
-import Cabecalho from './componentes/Cabecalho'
-import CampoTexto from './componentes/CampoTexto'
-import BarraLateral from './componentes/BarraLateral'
+import { styled } from "styled-components";
+import BarraLateral from "./componentes/BarraLateral";
+import Cabecalho from "./componentes/Cabecalho";
+import EstilosGlobais from "./componentes/EstilosGlobais";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -13,16 +12,16 @@ const FundoGradiente = styled.div`
   );
   width: 100%;
   min-height: 100vh;
-`
+`;
 
-function App () {
+function App() {
   return (
     <FundoGradiente>
       <EstilosGlobais />
       <Cabecalho />
       <BarraLateral />
     </FundoGradiente>
-  )
+  );
 }
 
-export default App
+export default App;
