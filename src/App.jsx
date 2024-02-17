@@ -1,10 +1,10 @@
 import Banner from "./componentes/Banner";
 import { styled } from "styled-components";
+import Galeria from "./componentes/Galeria";
 import Cabecalho from "./componentes/Cabecalho";
 import bannerBackground from "./assets/banner.png";
 import BarraLateral from "./componentes/BarraLateral";
 import EstilosGlobais from "./componentes/EstilosGlobais";
-import Galeria from "./componentes/Galeria";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
