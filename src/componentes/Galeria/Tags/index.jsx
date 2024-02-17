@@ -1,5 +1,12 @@
-const Tags = () => {
-  return <p>Tags</p>
-}
+import tags from "./tags.json";
 
-export default Tags
+const Tags = () => {
+  return (
+    <>
+      <p>Busque por tags:</p>;
+      {tags.map(tag => <button key={tag.id}>{tag.titulo}</button>)}
+    </>
+  );
+};
+
+export default Tags;
