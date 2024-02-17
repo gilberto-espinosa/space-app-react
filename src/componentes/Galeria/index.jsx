@@ -1,4 +1,5 @@
 import Tags from "./Tags";
+import Imagem from "./Imagem";
 import Titulo from "../Titulo";
 import Populares from "./Populares";
 import styled from "styled-components";
@@ -9,6 +10,12 @@ const GaleriaContainer = styled.div`
 const SecaoFluida = styled.section`
   flex-grow: 1;
 `;
+const ImagensContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
 
 const Galeria = ({ fotos = [] }) => {
   return (
@@ -17,7 +24,11 @@ const Galeria = ({ fotos = [] }) => {
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>
-          {fotos.map(foto => foto.titulo)}
+          <ImagensContainer>
+            {fotos.map((foto) => (
+              <Imagem key={foto.id} foto={foto} />
+            ))}
+          </ImagensContainer>
         </SecaoFluida>
         <Populares />
       </GaleriaContainer>
