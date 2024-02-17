@@ -1,6 +1,8 @@
+import Banner from "./componentes/Banner";
 import { styled } from "styled-components";
-import BarraLateral from "./componentes/BarraLateral";
 import Cabecalho from "./componentes/Cabecalho";
+import bannerBackground from "./assets/banner.png";
+import BarraLateral from "./componentes/BarraLateral";
 import EstilosGlobais from "./componentes/EstilosGlobais";
 
 const FundoGradiente = styled.div`
@@ -20,6 +22,10 @@ function App() {
       <EstilosGlobais />
       <Cabecalho />
       <BarraLateral />
+      <Banner
+        texto="A galeria mais completa de fotos do espaço!"
+        backgroundImage={bannerBackground}
+      />
     </FundoGradiente>
   );
 }
