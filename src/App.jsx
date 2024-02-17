@@ -16,16 +16,24 @@ const FundoGradiente = styled.div`
   min-height: 100vh;
 `;
 
+const AppContainer = styled.div`
+  width: 1440px;
+  margin: 0 auto;
+  max-width: 100%;
+`;
+
 function App() {
   return (
     <FundoGradiente>
       <EstilosGlobais />
-      <Cabecalho />
-      <BarraLateral />
-      <Banner
-        texto="A galeria mais completa de fotos do espaço!"
-        backgroundImage={bannerBackground}
-      />
+      <AppContainer>
+        <Cabecalho />
+        <BarraLateral />
+        <Banner
+          texto="A galeria mais completa de fotos do espaço!"
+          backgroundImage={bannerBackground}
+        />
+      </AppContainer>
     </FundoGradiente>
   );
 }
