@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const GaleriaContainer = styled.div`
   display: flex;
+  gap: 40px;
 `;
 const SecaoFluida = styled.section`
   flex-grow: 1;
@@ -17,7 +18,7 @@ const ImagensContainer = styled.section`
   gap: 24px;
 `;
 
-const Galeria = ({ fotos = [] }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoAoternarFavorito }) => {
   return (
     <>
       <Tags />
@@ -26,7 +27,12 @@ const Galeria = ({ fotos = [] }) => {
           <Titulo>Navegue pela galeria</Titulo>
           <ImagensContainer>
             {fotos.map((foto) => (
-              <Imagem key={foto.id} foto={foto} />
+              <Imagem
+                aoZoomSolicitado={aoFotoSelecionada}
+                aoAoternarFavorito={aoAoternarFavorito}
+                key={foto.id}
+                foto={foto}
+              />
             ))}
           </ImagensContainer>
         </SecaoFluida>

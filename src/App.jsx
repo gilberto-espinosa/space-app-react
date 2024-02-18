@@ -7,6 +7,7 @@ import Cabecalho from "./componentes/Cabecalho";
 import bannerBackground from "./assets/banner.png";
 import BarraLateral from "./componentes/BarraLateral";
 import EstilosGlobais from "./componentes/EstilosGlobais";
+import ModalZoom from "./componentes/ModalZoom";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -37,8 +38,28 @@ const ConteudoGaleria = styled.section`
 `;
 
 const App = () => {
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
+  const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
-  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
+  const aoAoternarFavorito = (foto) => {
+    if (foto.id === fotoSelecionada?.id) {
+      setFotoSelecionada({
+        ...fotoSelecionada,
+        favorita: !fotoSelecionada.favorita,
+      });
+    }
+    setFotosDaGaleria(
+      fotosDaGaleria.map((fotosDaGaleria) => {
+        return {
+          ...fotosDaGaleria,
+          favorita:
+            fotosDaGaleria.id === foto.id
+              ? !foto.favorita
+              : fotosDaGaleria.favorita,
+        };
+      })
+    );
+  };
 
   return (
     <FundoGradiente>
@@ -52,10 +73,19 @@ const App = () => {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria fotos={fotosDaGaleria}/>
+            <Galeria
+              aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
+              aoAoternarFavorito={aoAoternarFavorito}
+              fotos={fotosDaGaleria}
+            />
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
+      <ModalZoom
+        foto={fotoSelecionada}
+        aoFechar={() => setFotoSelecionada(null)}
+        aoAoternarFavorito={aoAoternarFavorito}
+      />
     </FundoGradiente>
   );
 };
