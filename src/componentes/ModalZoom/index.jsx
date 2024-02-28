@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Imagem from "../Galeria/Imagem";
+import Imagem from "../Galeria/ImagemGaleria";
 import BotaoIcone from "../BotaoIcone";
 
 const Overlay = styled.div`

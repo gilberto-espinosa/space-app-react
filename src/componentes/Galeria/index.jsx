@@ -1,5 +1,5 @@
 import Tags from "./Tags";
-import Imagem from "./Imagem";
+import Imagem from "./ImagemGaleria";
 import Titulo from "../Titulo";
 import Populares from "./Populares";
 import styled from "styled-components";
