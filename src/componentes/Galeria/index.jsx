@@ -4,6 +4,7 @@ import Titulo from "../Titulo";
 import Populares from "./Populares";
 import styled from "styled-components";
 
+
 const GaleriaContainer = styled.div`
   display: flex;
   gap: 40px;
