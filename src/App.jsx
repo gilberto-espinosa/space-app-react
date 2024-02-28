@@ -1,13 +1,14 @@
 import { useState } from "react";
-import fotos from "./fotos.json";
-import Banner from "./componentes/Banner";
 import { styled } from "styled-components";
-import Galeria from "./componentes/Galeria";
-import Cabecalho from "./componentes/Cabecalho";
 import bannerBackground from "./assets/banner.png";
+import Banner from "./componentes/Banner";
 import BarraLateral from "./componentes/BarraLateral";
+import Cabecalho from "./componentes/Cabecalho";
 import EstilosGlobais from "./componentes/EstilosGlobais";
+import Footer from "./componentes/Footer";
+import Galeria from "./componentes/Galeria";
 import ModalZoom from "./componentes/ModalZoom";
+import fotos from "./fotos.json";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -35,6 +36,15 @@ const ConteudoGaleria = styled.section`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+`;
+
+const FooterContainer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 73px;
+  height: 80px;
+  background-color: #04244f;
+  align-items: center;
 `;
 
 const App = () => {
@@ -86,6 +96,9 @@ const App = () => {
         aoFechar={() => setFotoSelecionada(null)}
         aoAoternarFavorito={aoAoternarFavorito}
       />
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
     </FundoGradiente>
   );
 };
