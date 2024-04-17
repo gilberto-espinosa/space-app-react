@@ -23,6 +23,7 @@ const FundoGradiente = styled.div`
 
 const AppContainer = styled.div`
   width: 1440px;
+ 
   margin: 0 auto;
   max-width: 100%;
 `;
@@ -89,6 +90,8 @@ const App = () => {
               fotos={fotosDaGaleria}
             />
           </ConteudoGaleria>
+          <BarraLateral />
+
         </MainContainer>
       </AppContainer>
       <ModalZoom
